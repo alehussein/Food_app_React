@@ -1,7 +1,7 @@
 .form {
   margin: 1rem 0;
   height: 19rem;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .control {
@@ -28,34 +28,19 @@
   gap: 1rem;
 }
 
-.actions {
-  text-align: right;
-}
-
 .actions button {
   font: inherit;
+  color: #5a1a01;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8a2b06;
-  padding: 0.5rem 2rem;
+  border: none;
   border-radius: 25px;
-  margin-left: 1rem;
+  padding: 0.5rem 2rem; 
 }
 
 .actions button:hover,
 .actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
-  color: white;
-}
-
-.actions .button--alt {
-  color: #8a2b06;
-}
-
-.actions .button {
-  background-color: #8a2b06;
-  color: white;
+  background-color: #ffe6dc;
 }
 
 .actions .submit {
@@ -76,4 +61,14 @@
 .invalid input {
   border-color: #aa0b20;
   background-color: #ffeff1;
+}
+
+
+.actions .submit:disabled,
+.actions .submit:disabled:hover,
+.actions .submit:disabled:active{
+  background-color: #ccc;
+  color: #3f3f3f;
+  border-color: #ccc;
+  cursor: not-allowed;
 }
