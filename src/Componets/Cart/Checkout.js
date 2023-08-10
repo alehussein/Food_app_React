@@ -44,6 +44,20 @@ const Checkout = (props) => {
     if (!formIsValid) {
       return;
     }
+
+    props.onConfirm({
+      name: name,
+      street: street,
+      postal: postal,
+      city: city,
+    });
+
+    setInput({
+      name:'',
+      street: '',
+      postal: '',
+      city: ''
+    })
   }
 
 
@@ -69,12 +83,12 @@ const Checkout = (props) => {
     }));
   }
 
+  
+
   const nameControl = `${classes.control} ${validate.vName ? '' : classes.invalid}`;
   const streetControl = `${classes.control} ${validate.vStreet ? '' : classes.invalid}`;
   const postalControl = `${classes.control} ${validate.vPostal ? '' : classes.invalid}`;
   const cityControl = `${classes.control} ${validate.vCity ? '' : classes.invalid}`;
-
-
 
   return (
     <form onSubmit={confirmHandler} className={classes.form}>
@@ -139,7 +153,9 @@ const Checkout = (props) => {
         <button
           disabled={!formIsValid}
           className={classes.submit}>Confirm</button>
+          
       </div>
+      
     </form>
   )
 }
